@@ -923,11 +923,11 @@ a:hover { color: var(--color-primary-hover); }
   border: none;
 }
 .sanctuary-quote p {
-  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
   font-weight: 500;
-  line-height: 1.65;
+  line-height: 1.45;
   color: var(--color-text);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
 }
 [data-theme="dark"] .sanctuary-quote p {
   color: var(--color-text);
