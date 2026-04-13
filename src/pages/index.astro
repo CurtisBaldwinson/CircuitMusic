@@ -414,22 +414,22 @@ const clientData = {
           <div class="insight-card">
             <span class="insight-icon">♩</span>
             <h3>Circuit vs Disco</h3>
-            <p>Same four-on-the-floor DNA. But disco is more mechanically rigid (CV 0.023 vs 0.039), more percussive (54% vs 41%), and uses live orchestral instruments against circuit's synthesized maximalism. Circuit is faster and harmonically busier.</p>
+            <p>Same four-on-the-floor DNA. But disco is more mechanically rigid (CV {gf(sortedGenres.find(r => r.genre === 'Disco')!, 'beat_cv_mean').toFixed(3)} vs {gf(sortedGenres.find(r => r.genre === 'Circuit')!, 'beat_cv_mean').toFixed(3)}), more percussive ({gf(sortedGenres.find(r => r.genre === 'Disco')!, 'percussive_pct_mean').toFixed(0)}% vs {gf(sortedGenres.find(r => r.genre === 'Circuit')!, 'percussive_pct_mean').toFixed(0)}%), and uses live orchestral instruments against circuit's synthesized maximalism. Circuit is faster and harmonically busier.</p>
           </div>
           <div class="insight-card">
             <span class="insight-icon">⌥</span>
             <h3>Circuit vs House</h3>
-            <p>Circuit is house's louder, denser cousin. Higher BPM, more onsets per second (6.27 vs 4.90), brighter spectral centroid (2119 Hz vs 1789 Hz), and more deliberate tresillo layering on top of the shared four-on-the-floor skeleton.</p>
+            <p>Circuit is house's louder, denser cousin. Higher BPM, more onsets per second ({gf(sortedGenres.find(r => r.genre === 'Circuit')!, 'events_per_sec_mean').toFixed(2)} vs {gf(sortedGenres.find(r => r.genre === 'House')!, 'events_per_sec_mean').toFixed(2)}), brighter spectral centroid ({Math.round(gf(sortedGenres.find(r => r.genre === 'Circuit')!, 'spectral_centroid_hz_mean')).toLocaleString()} Hz vs {Math.round(gf(sortedGenres.find(r => r.genre === 'House')!, 'spectral_centroid_hz_mean')).toLocaleString()} Hz), and more deliberate tresillo layering on top of the shared four-on-the-floor skeleton.</p>
           </div>
           <div class="insight-card">
             <span class="insight-icon">♭</span>
             <h3>Circuit vs Jazz</h3>
-            <p>Distant relatives through the tresillo's African lineage. Jazz is 94% harmonic energy vs circuit's 41%, nearly opposite. Jazz has massive dynamic range (0.78); circuit is compressed for DJ mixing (0.36). Both share higher-than-baseline tresillo presence.</p>
+            <p>Distant relatives through the tresillo's African lineage. Jazz is {(100 - gf(sortedGenres.find(r => r.genre === 'Jazz')!, 'percussive_pct_mean')).toFixed(0)}% harmonic energy vs circuit's {gf(sortedGenres.find(r => r.genre === 'Circuit')!, 'percussive_pct_mean').toFixed(0)}%, nearly opposite. Jazz has massive dynamic range ({gf(sortedGenres.find(r => r.genre === 'Jazz')!, 'dynamic_range_mean').toFixed(2)}); circuit is compressed for DJ mixing ({gf(sortedGenres.find(r => r.genre === 'Circuit')!, 'dynamic_range_mean').toFixed(2)}). Both share higher-than-baseline tresillo presence.</p>
           </div>
           <div class="insight-card">
             <span class="insight-icon">◉</span>
             <h3>The Tresillo Finding</h3>
-            <p>Tribal house scores highest on the tresillo index (2.28), confirming it's a structural design choice, not coincidence. Circuit (1.15) shows deliberate tresillo use. Disco (1.12) and jazz (1.22) encounter it incidentally through their own lineages.</p>
+            <p>Tribal house scores highest on the tresillo index ({gf(sortedGenres.find(r => r.genre === 'Tribal House')!, 'tresillo_lf_ratio_mean').toFixed(2)}), confirming it as a primary structural design choice. Circuit ({gf(sortedGenres.find(r => r.genre === 'Circuit')!, 'tresillo_lf_ratio_mean').toFixed(2)}) and Disco ({gf(sortedGenres.find(r => r.genre === 'Disco')!, 'tresillo_lf_ratio_mean').toFixed(2)}) cluster at a moderate level. Notably, Jazz ({gf(sortedGenres.find(r => r.genre === 'Jazz')!, 'tresillo_lf_ratio_mean').toFixed(2)}) and House ({gf(sortedGenres.find(r => r.genre === 'House')!, 'tresillo_lf_ratio_mean').toFixed(2)}) score above Circuit — suggesting tresillo-like rhythmic placement is widespread across genres, but tribal house maximizes it intentionally.</p>
           </div>
         </div>
       </div>
