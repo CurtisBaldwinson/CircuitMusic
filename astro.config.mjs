@@ -5,9 +5,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://circuitmusic.org',
   output: 'static',
-  adapter: vercel({
-    webAnalytics: { enabled: true },
-  }),
+  adapter: vercel(),
   integrations: [
     sitemap(),
   ],

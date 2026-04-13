@@ -8,8 +8,9 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^5.7.10",
+    "@astrojs/sitemap": "^3.3.1",
     "@astrojs/vercel": "^8.1.4",
-    "@astrojs/sitemap": "^3.3.1"
+    "@vercel/analytics": "^2.0.1",
+    "astro": "^5.7.10"
   }
 }
