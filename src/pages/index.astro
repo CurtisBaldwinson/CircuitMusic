@@ -10,13 +10,8 @@ import Layout from '../layouts/Layout.astro';
   <!-- NAV -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <a href="#" class="nav-logo" aria-label="Circuit Music home">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M4 16 L8 16 L10 8 L13 24 L16 12 L19 20 L22 16 L28 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <circle cx="10" cy="8" r="1.5" fill="currentColor"/>
-        <circle cx="19" cy="20" r="1.5" fill="currentColor"/>
-      </svg>
-      <span>Circuit</span>
+      <img src="/circuitmusic-logo.png" alt="" class="nav-logo-img" width="32" height="32" />
+      <span>Circuit Music</span>
     </a>
     <ul class="nav-links" role="list">
       <li><a href="#definition">Definition</a></li>
@@ -40,11 +35,26 @@ import Layout from '../layouts/Layout.astro';
     </div>
     <div class="hero-content">
       <p class="hero-eyebrow">A Musicological Analysis</p>
-      <h1 class="hero-title">Circuit<br/><em>Music</em></h1>
+      <div class="hero-lockup">
+        <h1 class="hero-title">Circuit<br/><em>Music</em></h1>
+        <div class="hero-logo-wrap" aria-hidden="true">
+          <img src="/circuitmusic-logo.png" alt="" class="hero-logo" width="220" height="220" />
+          <div class="flame-particles">
+            <span class="flame f1"></span>
+            <span class="flame f2"></span>
+            <span class="flame f3"></span>
+            <span class="flame f4"></span>
+            <span class="flame f5"></span>
+            <span class="flame f6"></span>
+            <span class="flame f7"></span>
+            <span class="flame f8"></span>
+          </div>
+        </div>
+      </div>
       <p class="hero-sub">From Fire Island to global stages, the genre built on tresillo, tribalism, and relentless forward motion. Defined objectively, measured programmatically.</p>
       <div class="hero-stats">
         <div class="stat">
-          <span class="stat-value" data-count="129">0</span><span class="stat-unit">BPM</span>
+          <span class="stat-value"><span data-count="129">0</span><span class="stat-unit">BPM</span></span>
           <span class="stat-label">Core Tempo</span>
         </div>
         <div class="stat-divider"></div>
@@ -401,7 +411,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
 
           <div class="dj-card">
-            <div class="dj-flag us" aria-label="United States"></div>
+            <div class="dj-flag de" aria-label="Germany"></div>
             <div class="dj-body">
               <h3>Ben Bakson</h3>
               <div class="dj-tags"><span>Modern Circuit</span><span>Big Room</span><span>Melodic</span></div>
@@ -521,14 +531,14 @@ import Layout from '../layouts/Layout.astro';
         <div class="radar-section">
           <h3>Genre Fingerprint Comparison</h3>
           <div class="radar-wrap">
-            <canvas id="radarChart" width="500" height="500" aria-label="Radar chart comparing genre fingerprints"></canvas>
+            <canvas id="radarChart" aria-label="Radar chart comparing genre fingerprints"></canvas>
           </div>
           <div class="radar-legend">
-            <span class="legend-dot" style="--c:#c084fc"></span> Circuit
-            <span class="legend-dot" style="--c:#f97316"></span> Tribal House
-            <span class="legend-dot" style="--c:#facc15"></span> Disco
-            <span class="legend-dot" style="--c:#4ade80"></span> House
-            <span class="legend-dot" style="--c:#38bdf8"></span> Jazz
+            <span class="legend-item"><span class="legend-dot" style="--c:#c084fc"></span>Circuit</span>
+            <span class="legend-item"><span class="legend-dot" style="--c:#f97316"></span>Tribal House</span>
+            <span class="legend-item"><span class="legend-dot" style="--c:#facc15"></span>Disco</span>
+            <span class="legend-item"><span class="legend-dot" style="--c:#4ade80"></span>House</span>
+            <span class="legend-item"><span class="legend-dot" style="--c:#38bdf8"></span>Jazz</span>
           </div>
         </div>
       </div>
