@@ -1,0 +1,17 @@
+genre,label,offset_used,bpm,beat_cv,tresillo_index,tresillo_lf,tresillo_lf_ratio,tresillo_mean_windowed,tresillo_cv_windowed,events_per_sec,percussive_pct,spectral_entropy,dynamic_range,spectral_centroid_hz
+Circuit,Offer Nissim — I'm So Excited (Extended),60,129.2,0.039,0.503,0.618,1.23,0.527,0.174,6.27,43.5,5.65,0.364,2119.0
+Circuit,Ben Bakson — Xlsior Mykonos 2022,180,129.2,0.05,0.738,0.784,1.063,0.797,0.286,2.83,38.2,5.19,0.871,1992.0
+Circuit,Joe Gauthreaux — 2023 Part 2,60,129.2,0.044,0.599,0.733,1.223,0.742,0.295,4.25,36.3,5.8,0.335,2775.0
+Tribal House,Danny Tenaglia — Music Is The Answer (Deep Dish Tribal Mix),60,129.2,0.019,0.51,0.566,1.108,0.623,0.237,3.62,29.4,5.32,0.849,2737.0
+Tribal House,DJ Veras — Classic 90s Tribal House Mix,300,129.2,0.028,0.468,0.658,1.408,0.442,0.125,5.93,37.0,5.64,0.405,2472.0
+Tribal House,DJ César Machia — 2000s Tribal Set,60,103.4,0.084,0.739,0.654,0.884,0.8,0.276,6.25,38.2,6.06,0.364,3399.0
+House,Classic House Sample (Chicago/NY),60,123.0,0.024,0.515,0.676,1.313,0.511,0.148,4.9,33.7,5.33,0.346,1789.0
+House,Frankie Knuckles & David Morales — Legends Mix,60,117.5,0.023,0.492,0.521,1.059,0.475,0.064,4.18,53.0,5.48,0.478,2873.0
+House,Louie Vega — Classic House Mix,60,123.0,0.018,0.567,0.797,1.407,0.514,0.143,5.17,42.4,6.2,0.318,3659.0
+Disco,Disco Sample (Classic 70s/80s),60,123.0,0.023,0.553,0.582,1.052,0.542,0.096,8.15,49.8,6.05,0.402,2819.0
+Disco,Bee Gees — Night Fever,60,112.3,0.021,0.49,0.619,1.262,0.489,0.087,4.73,49.9,6.04,0.461,3037.0
+Disco,"Studio 54 Classics — ABBA, Chic, Donna Summer, Bee Gees",60,107.7,0.022,0.554,0.608,1.096,0.569,0.076,4.33,47.2,5.24,0.535,1793.0
+Jazz,Miles Davis — So What (Kind of Blue),60,136.0,0.027,0.843,0.83,0.985,0.833,0.079,3.2,17.0,5.16,0.778,1938.0
+Jazz,Jazz at 100 — Hard Bop Tenor (1956-63),180,99.4,0.062,0.638,0.578,0.907,0.709,0.176,3.7,34.2,5.93,0.432,2887.0
+Jazz,Count Basie — Moten Swing,60,129.2,0.055,0.826,0.784,0.948,0.845,0.045,2.55,38.0,4.98,0.91,1206.0
+Jazz,Thelonious Monk — Straight No Chaser,60,83.4,0.044,0.76,0.771,1.014,0.734,0.219,4.52,21.6,5.1,0.466,1945.0
