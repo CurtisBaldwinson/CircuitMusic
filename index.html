@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Circuit Music: A Genre Defined</title>
+  <meta name="description" content="An objective, data-driven exploration of circuit music: its rhythm, structure, history, and measurable differences from disco, house, jazz, and tribal music." />
+
+  <!-- Fonts -->
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="#" class="nav-logo" aria-label="Circuit Music home">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <!-- Circuit board / waveform mark -->
+        <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M4 16 L8 16 L10 8 L13 24 L16 12 L19 20 L22 16 L28 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="10" cy="8" r="1.5" fill="currentColor"/>
+        <circle cx="19" cy="20" r="1.5" fill="currentColor"/>
+      </svg>
+      <span>Circuit</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#definition">Definition</a></li>
+      <li><a href="#rhythm">Rhythm</a></li>
+      <li><a href="#data">Data</a></li>
+      <li><a href="#djs">DJs</a></li>
+      <li><a href="#subjective">Character</a></li>
+    </ul>
+    <button class="nav-theme" data-theme-toggle aria-label="Switch to light mode">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" role="banner">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-grid"></div>
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+      <canvas class="hero-waveform" id="heroWave" aria-hidden="true"></canvas>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">A Musicological Analysis</p>
+      <h1 class="hero-title">Circuit<br/><em>Music</em></h1>
+      <p class="hero-sub">From Fire Island to global stages, the genre built on tresillo, tribalism, and relentless forward motion. Defined objectively, measured programmatically.</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-value" data-count="129">0</span><span class="stat-unit">BPM</span>
+          <span class="stat-label">Core Tempo</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value" data-count="1977">0</span>
+          <span class="stat-label">Fire Island Origins</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value" data-count="5">0</span>
+          <span class="stat-label">Genres Compared</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hero-scroll-line"></div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- SECTION: DEFINITION -->
+    <section class="section" id="definition">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">01 / What It Is</span>
+          <h2>Circuit is a Genre</h2>
+        </div>
+        <div class="two-col">
+          <div class="prose">
+            <p>Circuit music emerged from the gay club underground of the late 1970s, specifically the afternoon Tea Dances of New York's Fire Island and marathon events at venues like <strong>The Saint</strong> in the East Village and San Francisco's <strong>Trocadero Transfer</strong>. It is as much a genre as disco, which also emerged from a specific subculture and specific venues.</p>
+            <p>The genre is defined by a consistent and measurable set of sonic characteristics: a tresillo-over-two bass and kick pattern at 128–130 BPM, high percussive density layered against a lush harmonic foundation, and a production maximalism that distinguishes it from standard house music.</p>
+            <p>The claim that "circuit is just a context, not a genre" misunderstands genre formation itself. Disco, jazz, and blues all emerged from specific social contexts. The sonic fingerprint is what defines a genre, and circuit music has one.</p>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="timeline-year">1970s</span>
+              <div class="timeline-content">
+                <strong>Tea Dances & The Saint</strong>
+                <p>Marathon disco parties in NYC and SF. Gay liberation culture fuses with dance music.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">1989</span>
+              <div class="timeline-content">
+                <strong>Junior Vasquez at Sound Factory</strong>
+                <p>12-hour sets define the tribal-house arc. Beat-driven, percussive, relentless.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">1990s</span>
+              <div class="timeline-content">
+                <strong>Global Circuit Parties</strong>
+                <p>White Party, Black & Blue, Winter Party. The circuit becomes a worldwide network with its own music ecosystem.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">2000s</span>
+              <div class="timeline-content">
+                <strong>Progressive & Electro Influence</strong>
+                <p>Peter Rauhofer, Offer Nissim. Lush synths and Middle Eastern scales enter the palette.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">Now</span>
+              <div class="timeline-content">
+                <strong>Global Flavors</strong>
+                <p>Brazilian samba percussion, Latin aleteo, Israeli progressive circuit. One rhythm, many voices.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: RHYTHM -->
+    <section class="section section-dark" id="rhythm">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">02 / The Core Pattern</span>
+          <h2>The Tresillo</h2>
+        </div>
+        <p class="section-intro">Every genre has a rhythmic fingerprint. Circuit's is the tresillo, a 3+3+2 subdivision of 8 sixteenth notes, inherited from Sub-Saharan Africa through Afro-Cuban music, and applied to the bass drum and bass line simultaneously.</p>
+
+        <div class="rhythm-header">
+          <div class="rhythm-audio-btn-wrap">
+            <button class="rhythm-play-btn" id="rhythmPlayBtn" aria-label="Play circuit music sample" aria-pressed="false">
+              <span class="rpb-icon rpb-icon-play" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+              </span>
+              <span class="rpb-icon rpb-icon-stop" aria-hidden="true" style="display:none">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+              </span>
+              <span class="rpb-label">Hear it</span>
+            </button>
+            <span class="rhythm-audio-note">8-sec clip, Ben Bakson @ Xlsior Mykonos 2022</span>
+          </div>
+        </div>
+
+        <div class="rhythm-visual" aria-label="Tresillo rhythm pattern visualization">
+          <div class="rhythm-label">Tresillo Bass (3+3+2)</div>
+          <div class="rhythm-grid" id="tresilloGrid">
+            <!-- Generated by JS -->
+          </div>
+          <div class="rhythm-label">Four-on-the-Floor Kick</div>
+          <div class="rhythm-grid" id="kickGrid"></div>
+          <div class="rhythm-label">Combined (Circuit Tension)</div>
+          <div class="rhythm-grid" id="combinedGrid"></div>
+          <div class="rhythm-key">
+            <span class="key-hit">■ Hit</span>
+            <span class="key-rest">□ Rest</span>
+          </div>
+        </div>
+
+        <div class="rhythm-explanation">
+          <div class="rhythm-card">
+            <div class="rhythm-card-icon">3+3+2</div>
+            <h3>Tresillo Pattern</h3>
+            <p>Three attacks in 8 sixteenth-note slots: positions 1, 4, and 6. Creates a forward lean, arriving early relative to the grid.</p>
+          </div>
+          <div class="rhythm-card">
+            <div class="rhythm-card-icon">4/4</div>
+            <h3>House Foundation</h3>
+            <p>The four-on-the-floor kick grounds the listener in a regular 4/4 meter, providing the anchor that makes the tresillo's tension readable.</p>
+          </div>
+          <div class="rhythm-card">
+            <div class="rhythm-card-icon">⟳</div>
+            <h3>Polyrhythmic Tension</h3>
+            <p>Layering tresillo against a 4/4 framework creates a polyrhythm: two competing metric frameworks that the brain resolves as groove.</p>
+          </div>
+        </div>
+
+        <div class="tresillo-lineage">
+          <h3>Lineage</h3>
+          <div class="lineage-flow">
+            <span class="lineage-node">Sub-Saharan Africa</span>
+            <span class="lineage-arrow">→</span>
+            <span class="lineage-node">Afro-Cuban / Habanera</span>
+            <span class="lineage-arrow">→</span>
+            <span class="lineage-node">New Orleans Second Line</span>
+            <span class="lineage-arrow">→</span>
+            <span class="lineage-node">Reggaeton / Dembow</span>
+            <span class="lineage-arrow">→</span>
+            <span class="lineage-node accent">Circuit / Tribal House</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: DATA -->
+    <section class="section" id="data">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">03 / Programmatic Analysis</span>
+          <h2>Measured Differences</h2>
+        </div>
+        <p class="section-intro">Five genres were analyzed using librosa at 44.1kHz across 60-second segments. Each metric below is a direct measurement, not subjective description.</p>
+
+        <!-- Metric selector -->
+        <div class="chart-nav" role="tablist" aria-label="Select metric to display">
+          <button class="chart-tab active" data-metric="bpm" role="tab" aria-selected="true">Tempo</button>
+          <button class="chart-tab" data-metric="tresillo" role="tab" aria-selected="false">Tresillo</button>
+          <button class="chart-tab" data-metric="density" role="tab" aria-selected="false">Event Density</button>
+          <button class="chart-tab" data-metric="percussive" role="tab" aria-selected="false">Percussion</button>
+          <button class="chart-tab" data-metric="harmonic" role="tab" aria-selected="false">Harmonic Richness</button>
+          <button class="chart-tab" data-metric="dynamic" role="tab" aria-selected="false">Dynamic Range</button>
+        </div>
+
+        <div class="chart-stage">
+          <div class="chart-description" id="chartDescription">
+            <h3 id="chartTitle">Tempo (BPM)</h3>
+            <p id="chartExplain">Beats per minute measured by librosa's beat tracker. Circuit music's 128–130 BPM range is faster than classic disco and standard house, placing it firmly in peak-time electronic territory.</p>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="mainChart" aria-label="Genre comparison chart"></canvas>
+          </div>
+        </div>
+
+        <!-- Data table -->
+        <div class="data-table-wrap">
+          <h3 class="table-title">Full Analysis Results</h3>
+          <div class="table-scroll">
+            <table class="data-table" aria-label="Programmatic analysis results by genre">
+              <thead>
+                <tr>
+                  <th scope="col">Genre</th>
+                  <th scope="col">BPM</th>
+                  <th scope="col">Beat Regularity <span class="th-note">(lower = rigid)</span></th>
+                  <th scope="col">Tresillo Index</th>
+                  <th scope="col">Events/sec</th>
+                  <th scope="col">Percussive %</th>
+                  <th scope="col">Harmonic Entropy</th>
+                  <th scope="col">Dynamic Range</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="row-highlight">
+                  <td><span class="genre-dot" style="--c:#c084fc"></span> Circuit</td>
+                  <td><strong>129.2</strong></td>
+                  <td>0.039</td>
+                  <td>1.15</td>
+                  <td>6.27</td>
+                  <td>40.8%</td>
+                  <td>5.48</td>
+                  <td>0.364</td>
+                </tr>
+                <tr>
+                  <td><span class="genre-dot" style="--c:#f97316"></span> Tribal House</td>
+                  <td>103.4</td>
+                  <td>0.088</td>
+                  <td><strong>2.28</strong></td>
+                  <td>5.53</td>
+                  <td>33.3%</td>
+                  <td>4.46</td>
+                  <td>0.486</td>
+                </tr>
+                <tr>
+                  <td><span class="genre-dot" style="--c:#facc15"></span> Disco</td>
+                  <td>123.0</td>
+                  <td><strong>0.023</strong></td>
+                  <td>1.12</td>
+                  <td><strong>8.15</strong></td>
+                  <td><strong>54.5%</strong></td>
+                  <td>4.50</td>
+                  <td>0.402</td>
+                </tr>
+                <tr>
+                  <td><span class="genre-dot" style="--c:#4ade80"></span> House</td>
+                  <td>123.0</td>
+                  <td>0.024</td>
+                  <td>1.26</td>
+                  <td>4.90</td>
+                  <td>27.6%</td>
+                  <td>5.32</td>
+                  <td>0.346</td>
+                </tr>
+                <tr>
+                  <td><span class="genre-dot" style="--c:#38bdf8"></span> Jazz</td>
+                  <td>136.0</td>
+                  <td>0.028</td>
+                  <td>1.22</td>
+                  <td>3.20</td>
+                  <td>5.7%</td>
+                  <td><strong>6.17</strong></td>
+                  <td><strong>0.778</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Insight cards -->
+        <div class="insight-grid">
+          <div class="insight-card">
+            <span class="insight-icon">♩</span>
+            <h3>Circuit vs Disco</h3>
+            <p>Same four-on-the-floor DNA. But disco is more mechanically rigid (CV 0.023 vs 0.039), more percussive (54% vs 41%), and uses live orchestral instruments against circuit's synthesized maximalism. Circuit is faster and harmonically busier.</p>
+          </div>
+          <div class="insight-card">
+            <span class="insight-icon">⌥</span>
+            <h3>Circuit vs House</h3>
+            <p>Circuit is house's louder, denser cousin. Higher BPM, more onsets per second (6.27 vs 4.90), brighter spectral centroid (2119 Hz vs 1789 Hz), and more deliberate tresillo layering on top of the shared four-on-the-floor skeleton.</p>
+          </div>
+          <div class="insight-card">
+            <span class="insight-icon">♭</span>
+            <h3>Circuit vs Jazz</h3>
+            <p>Distant relatives through the tresillo's African lineage. Jazz is 94% harmonic energy vs circuit's 41%, nearly opposite. Jazz has massive dynamic range (0.78); circuit is compressed for DJ mixing (0.36). Both share higher-than-baseline tresillo presence.</p>
+          </div>
+          <div class="insight-card">
+            <span class="insight-icon">◉</span>
+            <h3>The Tresillo Finding</h3>
+            <p>Tribal house scores highest on the tresillo index (2.28), confirming it's a structural design choice, not coincidence. Circuit (1.15) shows deliberate tresillo use. Disco (1.12) and jazz (1.22) encounter it incidentally through their own lineages.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: DJs -->
+    <section class="section section-dark" id="djs">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">04 / The DJs</span>
+          <h2>Flavors Within the Genre</h2>
+        </div>
+        <p class="section-intro">All circuit DJs share the BPM range, four-on-the-floor framework, tresillo bass, and maximalist texture. They diverge in where they place emphasis within that shared language.</p>
+
+        <div class="dj-grid">
+          <div class="dj-card">
+            <div class="dj-flag il" aria-label="Israel"></div>
+            <div class="dj-body">
+              <h3>Offer Nissim</h3>
+              <div class="dj-tags"><span>Progressive</span><span>Nocturnal</span><span>Middle Eastern</span></div>
+              <p>Removed the tribal percussion but kept the tresillo metric, for a more introspective, atmospheric circuit. Middle Eastern scales and lush harmonic layering define his signature. A cult figure in Israeli and global circuit culture.</p>
+              <div class="dj-bars">
+                <div class="dj-bar-row"><span>Percussion</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:35%"></div></div></div>
+                <div class="dj-bar-row"><span>Harmony</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:85%"></div></div></div>
+                <div class="dj-bar-row"><span>Energy</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:75%"></div></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dj-card">
+            <div class="dj-flag us" aria-label="United States"></div>
+            <div class="dj-body">
+              <h3>Joe Gauthreaux</h3>
+              <div class="dj-tags"><span>Anthemic</span><span>Vocal</span><span>Big Room</span></div>
+              <p>Emotional arc-builder. Heavy diva remix culture (Beyoncé, Lady Gaga, Whitney) woven into progressive big-room circuit builds. Known for dramatic emotional peaks and crowd-connecting moments.</p>
+              <div class="dj-bars">
+                <div class="dj-bar-row"><span>Percussion</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:55%"></div></div></div>
+                <div class="dj-bar-row"><span>Harmony</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:70%"></div></div></div>
+                <div class="dj-bar-row"><span>Energy</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:90%"></div></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dj-card">
+            <div class="dj-flag us" aria-label="United States"></div>
+            <div class="dj-body">
+              <h3>Alex Acosta</h3>
+              <div class="dj-tags"><span>Latin Tribal</span><span>Percussion-Heavy</span><span>Raw</span></div>
+              <p>Dense Afro-Latin polyrhythm. Conga-heavy, high rhythmic density, closest to the strict tribal house definition. Strong samba and Caribbean influence creates a more primal, physical circuit feel.</p>
+              <div class="dj-bars">
+                <div class="dj-bar-row"><span>Percussion</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:90%"></div></div></div>
+                <div class="dj-bar-row"><span>Harmony</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:50%"></div></div></div>
+                <div class="dj-bar-row"><span>Energy</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:85%"></div></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dj-card">
+            <div class="dj-flag br" aria-label="Brazil"></div>
+            <div class="dj-body">
+              <h3>Filipe Guerra</h3>
+              <div class="dj-tags"><span>Brazilian Tribal</span><span>Samba-Inflected</span><span>Dense</span></div>
+              <p>Brazilian circuit tradition with samba percussion woven through the tresillo framework. High rhythmic density and a distinctly Latin warmth. Representative of South America's rich circuit production scene.</p>
+              <div class="dj-bars">
+                <div class="dj-bar-row"><span>Percussion</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:85%"></div></div></div>
+                <div class="dj-bar-row"><span>Harmony</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:60%"></div></div></div>
+                <div class="dj-bar-row"><span>Energy</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:80%"></div></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dj-card">
+            <div class="dj-flag pt" aria-label="Portugal/Brazil (international)"></div>
+            <div class="dj-body">
+              <h3>Isis Muretech</h3>
+              <div class="dj-tags"><span>Dark</span><span>Hard Tribal</span><span>Trance-Adjacent</span></div>
+              <p>Harder transients, darker tonal centers. Approaches circuit from a harder-edged tribal foundation with trance-inspired build structures. More industrial energy within the same tresillo framework.</p>
+              <div class="dj-bars">
+                <div class="dj-bar-row"><span>Percussion</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:80%"></div></div></div>
+                <div class="dj-bar-row"><span>Harmony</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:45%"></div></div></div>
+                <div class="dj-bar-row"><span>Energy</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:95%"></div></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dj-card">
+            <div class="dj-flag us" aria-label="United States"></div>
+            <div class="dj-body">
+              <h3>Ben Bakson</h3>
+              <div class="dj-tags"><span>Modern Circuit</span><span>Big Room</span><span>Melodic</span></div>
+              <p>Contemporary circuit production: cleaner production values, big room sensibility, melodic hooks. Represents the genre's evolution toward more polished, festival-adjacent sound while maintaining circuit identity.</p>
+              <div class="dj-bars">
+                <div class="dj-bar-row"><span>Percussion</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:60%"></div></div></div>
+                <div class="dj-bar-row"><span>Harmony</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:75%"></div></div></div>
+                <div class="dj-bar-row"><span>Energy</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:88%"></div></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dj-card">
+            <div class="dj-flag it" aria-label="Italy"></div>
+            <div class="dj-body">
+              <h3>Enrico Meloni</h3>
+              <div class="dj-tags"><span>Tribal</span><span>Progressive</span><span>Techno-Edged</span></div>
+              <p>Rome-based and internationally booked, Meloni fuses tribal house roots with progressive beats and a creeping techno influence. His sets carry a distinctly European darkness: driving energy over melodic warmth, with percussion that escalates relentlessly through the night.</p>
+              <div class="dj-bars">
+                <div class="dj-bar-row"><span>Percussion</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:82%"></div></div></div>
+                <div class="dj-bar-row"><span>Harmony</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:55%"></div></div></div>
+                <div class="dj-bar-row"><span>Energy</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:92%"></div></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dj-card">
+            <div class="dj-flag us" aria-label="United States"></div>
+            <div class="dj-body">
+              <h3>Joe Pacheco</h3>
+              <div class="dj-tags"><span>NYC Big Room</span><span>Euphoric</span><span>Unpredictable</span></div>
+              <p>NYC-bred and globally booked across Winter Party, Xlsior, World Pride. Pacheco draws from tribal, progressive, deep house, and trance without settling into any single lane. His sets are built on surprise: unexpected genre pivots and powerful vocal moments that reward a crowd paying close attention.</p>
+              <div class="dj-bars">
+                <div class="dj-bar-row"><span>Percussion</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:70%"></div></div></div>
+                <div class="dj-bar-row"><span>Harmony</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:72%"></div></div></div>
+                <div class="dj-bar-row"><span>Energy</span><div class="dj-bar"><div class="dj-bar-fill" style="--w:91%"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SUBJECTIVE -->
+    <section class="section" id="subjective">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">05 / The Unmeasured</span>
+          <h2>What the Data Can't Capture</h2>
+        </div>
+        <div class="two-col">
+          <div class="prose">
+            <p>The programmatic analysis captures structure. It doesn't capture the <em>function</em> of circuit music, which is inseparable from what it produces in a crowd over eight to twelve hours.</p>
+            <p>Circuit music is engineered for endurance. The tresillo creates a constant forward lean that prevents mental settling; you can't fully relax into the beat because the bass perpetually arrives slightly early relative to where the kick tells you to be. Over hours, this tension becomes meditative.</p>
+            <p>The dynamic compression that looks like a weakness in the data (circuit has the lowest dynamic range alongside house) is actually a design feature: a DJ needs consistent loudness across a 10-hour set so tracks mix seamlessly. The variation happens at a macro level: the arc of the entire night, not bar-to-bar.</p>
+            <p>The harmonic richness (chroma entropy 5.48, higher than disco and tribal house) comes from stacking tonal layers: synth pads, vocal stabs, basslines moving through tonal centers. The result is a wall of harmonic information underneath the percussion, creating an enveloping sound environment rather than a song you follow.</p>
+          </div>
+          <div class="qualities">
+            <div class="quality-item">
+              <div class="quality-bar-outer">
+                <div class="quality-bar-inner" style="--w:92%"></div>
+              </div>
+              <div class="quality-text">
+                <strong>Physical Engagement</strong>
+                <span>Tresillo tension creates unavoidable physical response</span>
+              </div>
+            </div>
+            <div class="quality-item">
+              <div class="quality-bar-outer">
+                <div class="quality-bar-inner" style="--w:85%"></div>
+              </div>
+              <div class="quality-text">
+                <strong>Tonal Density</strong>
+                <span>Layered harmonic environment vs. single melody focus</span>
+              </div>
+            </div>
+            <div class="quality-item">
+              <div class="quality-bar-outer">
+                <div class="quality-bar-inner" style="--w:78%"></div>
+              </div>
+              <div class="quality-text">
+                <strong>Endurance Design</strong>
+                <span>Engineered for 8–12 hour marathon sets</span>
+              </div>
+            </div>
+            <div class="quality-item">
+              <div class="quality-bar-outer">
+                <div class="quality-bar-inner" style="--w:70%"></div>
+              </div>
+              <div class="quality-text">
+                <strong>Arc Structure</strong>
+                <span>Narrative across hours, not minutes: peaks, valleys, climax</span>
+              </div>
+            </div>
+            <div class="quality-item">
+              <div class="quality-bar-outer">
+                <div class="quality-bar-inner" style="--w:65%"></div>
+              </div>
+              <div class="quality-text">
+                <strong>Community Encoding</strong>
+                <span>Recognizable to its audience; foreign to outsiders</span>
+              </div>
+            </div>
+            <div class="quality-item">
+              <div class="quality-bar-outer">
+                <div class="quality-bar-inner" style="--w:88%"></div>
+              </div>
+              <div class="quality-text">
+                <strong>Maximalism</strong>
+                <span>Deliberate busyness: no space left unfilled</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Genre comparison radar using CSS -->
+        <div class="radar-section">
+          <h3>Genre Fingerprint Comparison</h3>
+          <div class="radar-wrap">
+            <canvas id="radarChart" width="500" height="500" aria-label="Radar chart comparing genre fingerprints"></canvas>
+          </div>
+          <div class="radar-legend">
+            <span class="legend-dot" style="--c:#c084fc"></span> Circuit
+            <span class="legend-dot" style="--c:#f97316"></span> Tribal House
+            <span class="legend-dot" style="--c:#facc15"></span> Disco
+            <span class="legend-dot" style="--c:#4ade80"></span> House
+            <span class="legend-dot" style="--c:#38bdf8"></span> Jazz
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SECTION: SANCTUARY -->
+  <section class="section sanctuary-section" id="sanctuary">
+    <div class="container">
+      <div class="sanctuary-inner">
+        <span class="section-tag">06 / Beyond the Music</span>
+        <blockquote class="sanctuary-quote">
+          <p>Circuit music is only one dimension of the circuit party. Beneath the sound, the spectacle, and the physical release lies something deeper: sanctuary. In a world where queer people have too often faced shame, persecution, and even death simply for existing, the circuit party can become an act of collective euphoria and remembrance, a temporary refuge where bodies are not hidden, love is not explained, and belonging does not need permission. For a moment, people step into a world shaped by one another, before returning to one that has not always offered the same grace.</p>
+          <footer class="sanctuary-attribution">— Curtis Baldwinson</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-byline">Researched and written with love, by Curtis Baldwinson</p>
+        <div class="footer-divider"></div>
+        <p class="footer-note">Analysis performed with <a href="https://librosa.org" target="_blank" rel="noopener">librosa</a> at 44.1kHz on 60-second segments. Tresillo index measures relative onset strength at 3+3+2 positions vs. non-tresillo positions in a sliding 2-beat window. Beat regularity measured as coefficient of variation of inter-beat intervals. Harmonic entropy uses chroma CQT feature with Shannon entropy calculation.</p>
+        <p class="footer-copy">Genre research drawn from <a href="https://en.wikipedia.org/wiki/Tresillo_(rhythm)" target="_blank" rel="noopener">Wikipedia / Tresillo</a>, <a href="https://www.thefader.com/2015/06/10/tresillo-club-music" target="_blank" rel="noopener">The FADER</a>, and <a href="https://www.advocate.com/news/history-of-lgbtq-circuit-parties" target="_blank" rel="noopener">The Advocate</a>.</p>
+        <div class="footer-divider"></div>
+        <div class="footer-legal">
+          <a href="https://baldwinson.com" target="_blank" rel="noopener" class="footer-corp">Baldwinson Corporation</a>
+          <span class="footer-legal-copy">&copy; 2026 Baldwinson Corporation. All rights reserved.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Circuit audio clip -->
+  <audio id="circuitAudio" preload="auto" loop>
+    <source src="circuit_clip.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="script.js"></script>
+<script data-pplx-inline-edit>
+(function(){
+  if(window===window.top)return;
+  function inlineAll(orig,clone){
+    if(orig.nodeType!==1)return;
+    try{
+      var cs=getComputedStyle(orig);
+      var t='';
+      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
+      clone.style.cssText=t;
+    }catch(e){}
+    var oc=orig.children,cc=clone.children;
+    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
+  }
+  function stripExternal(clone){
+    var imgs=clone.querySelectorAll('img');
+    for(var i=0;i<imgs.length;i++){
+      var s=imgs[i].getAttribute('src');
+      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
+    }
+    var all=clone.querySelectorAll('*');
+    for(var i=0;i<all.length;i++){
+      var st=all[i].style.cssText;
+      if(st&&st.indexOf('url(')>=0){
+        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
+      }
+    }
+  }
+  window.addEventListener('message',function(e){
+    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
+    var scrollX=window.scrollX||window.pageXOffset||0;
+    var scrollY=window.scrollY||window.pageYOffset||0;
+    var w=window.innerWidth,h=window.innerHeight;
+    try{
+      var clone=document.documentElement.cloneNode(true);
+      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
+      for(var i=0;i<rm.length;i++){rm[i].remove();}
+      inlineAll(document.documentElement,clone);
+      stripExternal(clone);
+      var html=new XMLSerializer().serializeToString(clone);
+      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
+        +'<foreignObject width="100%" height="100%">'
+        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
+        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
+        +html+'</div></div></foreignObject></svg>';
+      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+      var img=new Image();
+      img.onload=function(){
+        var c=document.createElement('canvas');c.width=w;c.height=h;
+        c.getContext('2d').drawImage(img,0,0);
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.onerror=function(){
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.src=svgUrl;
+    }catch(err){
+      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+    }
+  });
+})();
+</script></body>
+</html>

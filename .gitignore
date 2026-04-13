@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.vercel/
+.astro/
+
+# Vite
+node_modules/.vite/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
