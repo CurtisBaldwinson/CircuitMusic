@@ -176,62 +176,17 @@
   }
 })();
 
-// ---- CHART.JS DATA ---- 
-const GENRES = ['Circuit', 'Tribal House', 'Disco', 'House', 'Jazz'];
-const COLORS = ['#c084fc', '#f97316', '#facc15', '#4ade80', '#38bdf8'];
-const COLORS_ALPHA = ['rgba(192,132,252,0.15)', 'rgba(249,115,22,0.15)', 'rgba(250,204,21,0.15)', 'rgba(74,222,128,0.15)', 'rgba(56,189,248,0.15)'];
-
-const METRICS = {
-  bpm: {
-    title: 'Tempo (BPM)',
-    explain: 'Beats per minute measured by librosa\'s beat tracker. Circuit music\'s 128–130 BPM range is faster than classic disco and standard house, placing it firmly in peak-time electronic territory.',
-    values: [129.2, 103.4, 123.0, 123.0, 136.0],
-    unit: 'BPM',
-    min: 80,
-    max: 160,
-  },
-  tresillo: {
-    title: 'Tresillo Index',
-    explain: 'Measures how strongly the 3+3+2 tresillo pattern appears in the kick/bass layer. A score above 1.0 means the tresillo positions receive more energy than non-tresillo positions. Circuit (1.15) and Tribal House (2.28) show deliberate use; Disco and Jazz encounter it incidentally.',
-    values: [1.148, 2.277, 1.122, 1.262, 1.221],
-    unit: '',
-    min: 0.9,
-    max: 2.5,
-    refLine: { value: 1.0, label: 'Baseline (no preference)' }
-  },
-  density: {
-    title: 'Event Density (onsets/sec)',
-    explain: 'Number of musical events (note attacks, percussion hits) per second. Disco\'s high density comes from constant hi-hat fills. Circuit is denser than house, confirming its maximalist production. Jazz\'s sparseness reflects its emphasis on space and phrasing.',
-    values: [6.27, 5.53, 8.15, 4.90, 3.20],
-    unit: '/sec',
-    min: 0,
-    max: 10,
-  },
-  percussive: {
-    title: 'Percussive Energy %',
-    explain: 'What percentage of total audio energy is percussive vs. harmonic, measured via HPSS (Harmonic-Percussive Source Separation). Disco\'s live drums dominate at 54.5%. Jazz is nearly all harmonic (5.7%). Circuit sits in the middle at 40.8% — a balance between drum density and synth richness.',
-    values: [40.8, 33.3, 54.5, 27.6, 5.7],
-    unit: '%',
-    min: 0,
-    max: 65,
-  },
-  harmonic: {
-    title: 'Harmonic Diversity (Chroma Entropy)',
-    explain: 'Shannon entropy of the chroma distribution — how many different pitch classes are used and how evenly. Higher entropy means more tonal complexity. Jazz leads at 6.17 (constant chord changes). Circuit (5.48) is surprisingly rich — denser harmonically than disco or tribal house.',
-    values: [5.48, 4.46, 4.50, 5.32, 6.17],
-    unit: ' bits',
-    min: 3.5,
-    max: 7,
-  },
-  dynamic: {
-    title: 'Dynamic Range (RMS CoV)',
-    explain: 'Coefficient of variation of the RMS energy — how much loudness varies throughout the segment. Jazz (0.78) has enormous dynamic range from soft to loud passages. Circuit (0.36) and House (0.35) are highly compressed — a deliberate design for DJ-mix continuity across 8-hour sets.',
-    values: [0.364, 0.486, 0.402, 0.346, 0.778],
-    unit: '',
-    min: 0,
-    max: 0.9,
-  },
-};
+// ---- CHART.JS DATA (loaded from CSV at build time) ---- 
+const _DATA = globalThis.__CIRCUIT_DATA__ || {};
+const GENRES = _DATA.genres || ['Circuit', 'Tribal House', 'Disco', 'House', 'Jazz'];
+const COLORS = _DATA.colors || ['#c084fc', '#f97316', '#facc15', '#4ade80', '#38bdf8'];
+const COLORS_ALPHA = COLORS.map(c => {
+  const r = Number.parseInt(c.slice(1, 3), 16);
+  const g = Number.parseInt(c.slice(3, 5), 16);
+  const b = Number.parseInt(c.slice(5, 7), 16);
+  return `rgba(${r},${g},${b},0.15)`;
+});
+const METRICS = _DATA.metrics || {};
 
 // ---- MAIN BAR CHART ---- 
 let mainChart = null;
@@ -353,24 +308,15 @@ function buildMainChart(metricKey) {
   const canvas = document.getElementById('radarChart');
   if (!canvas) return;
 
-  // Normalized data (0-1) for each genre across 6 dimensions
-  // [BPM norm, Beat Regularity inv, Tresillo, Event Density, Percussive, Harmonic Diversity]
-  // BPM: 80-160 range; Beat regularity inverted (lower CV = higher score); rest normalized 0-1
   const normalize = (val, min, max) => (val - min) / (max - min);
 
-  const rawData = {
-    Circuit:      [129.2, 0.0388, 1.148, 6.27, 40.8, 5.48],
-    'Tribal House': [103.4, 0.0881, 2.277, 5.53, 33.3, 4.46],
-    Disco:        [123.0, 0.0231, 1.122, 8.15, 54.5, 4.50],
-    House:        [123.0, 0.0241, 1.262, 4.90, 27.6, 5.32],
-    Jazz:         [136.0, 0.0281, 1.221, 3.20, 5.7, 6.17],
-  };
+  const rawData = _DATA.radar || {};
 
   // Ranges for normalization
   const ranges = [
     [80, 160],   // BPM
-    [0, 0.09],   // Beat irregularity (inverted)
-    [1.0, 2.5],  // Tresillo
+    [0, 0.1],    // Beat irregularity (inverted)
+    [0.8, 1.5],  // Tresillo
     [0, 10],     // Event density
     [0, 60],     // Percussive %
     [3.5, 7.0],  // Harmonic entropy
@@ -381,7 +327,7 @@ function buildMainChart(metricKey) {
     data: vals.map((v, i) => {
       const n = normalize(v, ranges[i][0], ranges[i][1]);
       // Invert beat irregularity (lower = more mechanical = higher "house" score)
-      return i === 1 ? 1 - n : n;
+      return i === 1 ? 1 - n : Math.min(Math.max(n, 0), 1);
     })
   }));
 
