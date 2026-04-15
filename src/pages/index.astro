@@ -181,23 +181,8 @@ const clientData = {
     </div>
     <div class="hero-content">
       <p class="hero-eyebrow">A Musicological Analysis</p>
-      <div class="hero-lockup">
-        <h1 class="hero-title">Circuit<br/><em>Music</em></h1>
-        <div class="hero-logo-wrap" aria-hidden="true">
-          <img src="/circuitmusic-logo.png" alt="" class="hero-logo" width="220" height="220" />
-          <div class="flame-particles">
-            <span class="flame f1"></span>
-            <span class="flame f2"></span>
-            <span class="flame f3"></span>
-            <span class="flame f4"></span>
-            <span class="flame f5"></span>
-            <span class="flame f6"></span>
-            <span class="flame f7"></span>
-            <span class="flame f8"></span>
-          </div>
-        </div>
-      </div>
-      <p class="hero-sub">From Fire Island to global stages, circuit music developed a measurable sonic identity.<br/>A software engineer's programmatic analysis of circuit music as a distinct genre.</p>
+      <h1 class="hero-title">Circuit<br/><em>Music</em></h1>
+      <p class="hero-sub">From Fire Island to global stages, the genre built on tresillo, tribalism, and relentless forward motion. Defined objectively, measured programmatically.</p>
       <div class="hero-stats">
         <div class="stat">
           <span class="stat-value"><span data-count="129">0</span><span class="stat-unit">BPM</span></span>
@@ -231,9 +216,9 @@ const clientData = {
         </div>
         <div class="two-col">
           <div class="prose">
-            <p>Circuit music emerged from the gay club underground of the late 1970s, specifically the afternoon Tea Dances of New York's Fire Island and marathon events at venues like <strong>The Saint</strong> in the East Village and San Francisco's <strong>Trocadero Transfer</strong>. It is as much a genre as disco, which also emerged from a specific subculture and specific venues.</p>
+            <p>Circuit music emerged from the gay club underground of the late 1970s, specifically the afternoon Tea Dances of New York's Fire Island and marathon events at venues like <strong>The Saint</strong> in the East Village and San Francisco's <strong>Trocadero Transfer</strong>.<sup class="cite"><a href="https://www.advocate.com/news/history-of-lgbtq-circuit-parties" target="_blank" rel="noopener" title="The Advocate: History of LGBTQ Circuit Parties">2</a></sup> It is as much a genre as disco, which also emerged from a specific subculture and specific venues.</p>
             <p>The genre is defined by a consistent and measurable set of sonic characteristics: a tresillo-over-two bass and kick pattern at 128–130 BPM, high percussive density layered against a lush harmonic foundation, and a production maximalism that distinguishes it from standard house music.</p>
-            <p>The claim that "circuit is just a context, not a genre" misunderstands genre formation itself. Disco, jazz, and blues all emerged from specific social contexts. The sonic fingerprint is what defines a genre, and circuit music has one.</p>
+            <p>The claim that "circuit is just a context, not a genre" misunderstands genre formation itself.<sup class="cite"><a href="https://www.thefader.com/2015/06/10/tresillo-club-music" target="_blank" rel="noopener" title="The FADER: How Tresillo Conquered Club Music">3</a></sup> Disco, jazz, and blues all emerged from specific social contexts. The sonic fingerprint is what defines a genre, and circuit music has one.</p>
           </div>
           <div class="timeline">
             <div class="timeline-item">
@@ -279,72 +264,161 @@ const clientData = {
     <!-- SECTION: RHYTHM -->
     <section class="section section-dark" id="rhythm">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">02 / The Core Pattern</span>
-          <h2>The Tresillo</h2>
-        </div>
-        <p class="section-intro">Every genre has a rhythmic fingerprint. Circuit's is the tresillo, a 3+3+2 subdivision of 8 sixteenth notes, inherited from Sub-Saharan Africa through Afro-Cuban music, and applied to the bass drum and bass line simultaneously.</p>
 
-        <div class="rhythm-header">
-          <div class="rhythm-audio-btn-wrap">
-            <button class="rhythm-play-btn" id="rhythmPlayBtn" aria-label="Play circuit music sample" aria-pressed="false">
-              <span class="rpb-icon rpb-icon-play" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-              </span>
-              <span class="rpb-icon rpb-icon-stop" aria-hidden="true" style="display:none">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
-              </span>
-              <span class="rpb-label">Hear it</span>
-            </button>
-            <span class="rhythm-audio-note">8-sec clip, Ben Bakson @ Xlsior Mykonos 2022</span>
+        <!-- ACT 1: THE HYPOTHESIS -->
+        <div class="act-block">
+          <div class="section-header">
+            <span class="section-tag">02 / The Core Pattern</span>
+            <span class="act-label">Act I — The Hypothesis</span>
+            <h2>The Tresillo</h2>
+          </div>
+          <p class="section-intro">Every genre has a rhythmic fingerprint. Circuit's first and most obvious candidate is the tresillo: a 3+3+2 subdivision of 8 sixteenth notes, inherited from Sub-Saharan Africa through Afro-Cuban music,<sup class="cite"><a href="https://en.wikipedia.org/wiki/Tresillo_(rhythm)" target="_blank" rel="noopener" title="Wikipedia: Tresillo (rhythm)">1</a></sup> carried through New Orleans into contemporary club music. Any serious listener of circuit will tell you the beat has a forward-rolling, almost suspended quality. The tresillo, in principle, explains that feeling. Now it's measured.</p>
+
+          <div class="rhythm-header">
+            <div class="rhythm-audio-btn-wrap">
+              <button class="rhythm-play-btn" id="rhythmPlayBtn" aria-label="Play circuit music sample" aria-pressed="false">
+                <span class="rpb-icon rpb-icon-play" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                </span>
+                <span class="rpb-icon rpb-icon-stop" aria-hidden="true" style="display:none">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+                </span>
+                <span class="rpb-label">Hear it</span>
+              </button>
+              <span class="rhythm-audio-note">8-sec clip, Ben Bakson @ Xlsior Mykonos 2022</span>
+            </div>
+          </div>
+
+          <div class="rhythm-visual" aria-label="Tresillo rhythm pattern visualization">
+            <div class="rhythm-label">Tresillo Bass (3+3+2)</div>
+            <div class="rhythm-grid" id="tresilloGrid"><!-- Generated by JS --></div>
+            <div class="rhythm-label">Four-on-the-Floor Kick</div>
+            <div class="rhythm-grid" id="kickGrid"></div>
+            <div class="rhythm-label">Combined — Circuit Tension</div>
+            <div class="rhythm-grid" id="combinedGrid"></div>
+            <div class="rhythm-key">
+              <span class="key-hit">■ Hit</span>
+              <span class="key-rest">□ Rest</span>
+            </div>
+          </div>
+
+          <div class="rhythm-explanation">
+            <div class="rhythm-card">
+              <div class="rhythm-card-icon">3+3+2</div>
+              <h3>Tresillo Pattern</h3>
+              <p>Three attacks in 8 sixteenth-note slots: positions 1, 4, and 7. Creates a forward lean, arriving early relative to the grid.</p>
+            </div>
+            <div class="rhythm-card">
+              <div class="rhythm-card-icon">4/4</div>
+              <h3>House Foundation</h3>
+              <p>The four-on-the-floor kick grounds the listener in regular 4/4 meter, providing the anchor that makes the tresillo's tension readable.</p>
+            </div>
+            <div class="rhythm-card">
+              <div class="rhythm-card-icon">⟳</div>
+              <h3>Polyrhythmic Tension</h3>
+              <p>Layering tresillo against a 4/4 framework creates a polyrhythm: two competing metric frameworks that the brain resolves as groove.</p>
+            </div>
+          </div>
+
+          <div class="tresillo-lineage">
+            <h3>Lineage</h3>
+            <div class="lineage-flow">
+              <span class="lineage-node">Sub-Saharan Africa</span>
+              <span class="lineage-arrow">→</span>
+              <span class="lineage-node">Afro-Cuban / Habanera</span>
+              <span class="lineage-arrow">→</span>
+              <span class="lineage-node">New Orleans Second Line</span>
+              <span class="lineage-arrow">→</span>
+              <span class="lineage-node">Reggaeton / Dembow</span>
+              <span class="lineage-arrow">→</span>
+              <span class="lineage-node accent">Circuit / Tribal House</span>
+            </div>
           </div>
         </div>
 
-        <div class="rhythm-visual" aria-label="Tresillo rhythm pattern visualization">
-          <div class="rhythm-label">Tresillo Bass (3+3+2)</div>
-          <div class="rhythm-grid" id="tresilloGrid"></div>
-          <div class="rhythm-label">Four-on-the-Floor Kick</div>
-          <div class="rhythm-grid" id="kickGrid"></div>
-          <div class="rhythm-label">Combined (Circuit Tension)</div>
-          <div class="rhythm-grid" id="combinedGrid"></div>
-          <div class="rhythm-key">
-            <span class="key-hit">■ Hit</span>
-            <span class="key-rest">□ Rest</span>
+        <!-- ACT 2: THE COMPLICATION -->
+        <div class="act-block act-block-complication">
+          <div class="act-label-inline">
+            <span class="act-label act-label-amber">Act II — The Complication</span>
           </div>
+          <h3 class="act-heading">The Data Pushed Back</h3>
+          <p class="act-body">Measuring the tresillo index across five genres produced a surprise: the numbers were closer than expected. Circuit scored {gf(sortedGenres.find(r => r.genre === 'Circuit')!, 'tresillo_index_mean').toFixed(2)}, tribal house {gf(sortedGenres.find(r => r.genre === 'Tribal House')!, 'tresillo_index_mean').toFixed(2)}, house {gf(sortedGenres.find(r => r.genre === 'House')!, 'tresillo_index_mean').toFixed(2)}. No clean separation. The reason turns out to be structural: in a full stereo mix, the kick drum is dramatically louder than everything above it. When the algorithm sums all onset energy, the four-on-the-floor kick dominates and every genre looks roughly duple. The tresillo, if it is there, is being buried under the one thing all dance music shares.</p>
+          <div class="complication-callout">
+            <div class="complication-stat">
+              <span class="complication-val">{gf(sortedGenres.find(r => r.genre === 'Circuit')!, 'tresillo_index_mean').toFixed(2)}</span>
+              <span class="complication-genre">Circuit</span>
+            </div>
+            <div class="complication-divider">vs.</div>
+            <div class="complication-stat">
+              <span class="complication-val">{gf(sortedGenres.find(r => r.genre === 'House')!, 'tresillo_index_mean').toFixed(2)}</span>
+              <span class="complication-genre">House</span>
+            </div>
+            <div class="complication-divider">vs.</div>
+            <div class="complication-stat">
+              <span class="complication-val">{gf(sortedGenres.find(r => r.genre === 'Tribal House')!, 'tresillo_index_mean').toFixed(2)}</span>
+              <span class="complication-genre">Tribal House</span>
+            </div>
+            <p class="complication-note">Tresillo index ({sortedGenres[0] && sortedGenres.find(r => r.genre === 'Circuit')!.n_tracks} tracks per genre, mean). Closer than the hypothesis predicted.</p>
+          </div>
+          <p class="act-body">This does not mean the pattern is absent. It means the full-mix measurement is too coarse a tool to recover it. The kick drum's dominance in a stereo dance mix is not a methodological failure — it is a fact about how this music is engineered. A finer instrument was needed.</p>
         </div>
 
-        <div class="rhythm-explanation">
-          <div class="rhythm-card">
-            <div class="rhythm-card-icon">3+3+2</div>
-            <h3>Tresillo Pattern</h3>
-            <p>Three attacks in 8 sixteenth-note slots: positions 1, 4, and 6. Creates a forward lean, arriving early relative to the grid.</p>
+        <!-- ACT 3: THE REFINED FINDING -->
+        <div class="act-block act-block-finding">
+          <div class="act-label-inline">
+            <span class="act-label act-label-teal">Act III — The Refined Finding</span>
           </div>
-          <div class="rhythm-card">
-            <div class="rhythm-card-icon">4/4</div>
-            <h3>House Foundation</h3>
-            <p>The four-on-the-floor kick grounds the listener in a regular 4/4 meter, providing the anchor that makes the tresillo's tension readable.</p>
+          <h3 class="act-heading">Subdivision Pressure</h3>
+          <p class="act-body">A second analysis isolated the hi-frequency percussion layer — the band above 2,000 Hz where hi-hats, synth stabs, shakers, and rides live. The kick drum barely registers there. Then, instead of testing named templates, the energy was measured across all 16 sixteenth-note positions per two bars, grouped into three levels: quarter-note beats (1, 2, 3, 4), eighth-note positions (the "and" between beats), and sixteenth-note positions (the "e" and "ah" in between). The result was unambiguous.</p>
+
+          <div class="subdivision-chart-wrap">
+            <div class="subdivision-chart-header">
+              <h4>Hi-Perc Energy by Subdivision Level</h4>
+              <p class="subdivision-chart-sub">Fraction of hi-frequency percussion energy falling on each rhythmic subdivision, averaged across 3 tracks per genre. 120-second segments, 2-bar sixteenth-note grid.</p>
+            </div>
+            <div class="subdivision-bars" id="subdivisionBars" aria-label="Subdivision energy chart"></div>
+            <div class="subdivision-legend">
+              <span class="subdiv-key subdiv-key-q">Quarter (1 2 3 4)</span>
+              <span class="subdiv-key subdiv-key-e">Eighth (+)</span>
+              <span class="subdiv-key subdiv-key-s">Sixteenth (e, ah)</span>
+            </div>
           </div>
-          <div class="rhythm-card">
-            <div class="rhythm-card-icon">⟳</div>
-            <h3>Polyrhythmic Tension</h3>
-            <p>Layering tresillo against a 4/4 framework creates a polyrhythm: two competing metric frameworks that the brain resolves as groove.</p>
+
+          <div class="finding-cards">
+            <div class="finding-card">
+              <div class="finding-card-val" style="color:var(--color-accent)">0.35</div>
+              <div class="finding-card-label">Circuit — sixteenth-note fraction</div>
+            </div>
+            <div class="finding-card">
+              <div class="finding-card-val" style="color:#2dd4bf">0.43</div>
+              <div class="finding-card-label">Tribal House — sixteenth-note fraction</div>
+            </div>
+            <div class="finding-card">
+              <div class="finding-card-val" style="color:#4ade80">0.14</div>
+              <div class="finding-card-label">House — sixteenth-note fraction</div>
+            </div>
+            <div class="finding-card">
+              <div class="finding-card-val" style="color:#facc15">0.22</div>
+              <div class="finding-card-label">Disco — sixteenth-note fraction</div>
+            </div>
           </div>
+
+          <p class="act-body">Circuit and tribal house place two to three times as much hi-frequency percussion energy into the sixteenth-note positions as house or disco do. That energy is not random noise: across 120-second segments, the patterns repeat with measurable consistency. The groove is defined not by one named cell, but by persistent occupation of the sub-beat space above the kick.</p>
         </div>
 
-        <div class="tresillo-lineage">
-          <h3>Lineage</h3>
-          <div class="lineage-flow">
-            <span class="lineage-node">Sub-Saharan Africa</span>
-            <span class="lineage-arrow">→</span>
-            <span class="lineage-node">Afro-Cuban / Habanera</span>
-            <span class="lineage-arrow">→</span>
-            <span class="lineage-node">New Orleans Second Line</span>
-            <span class="lineage-arrow">→</span>
-            <span class="lineage-node">Reggaeton / Dembow</span>
-            <span class="lineage-arrow">→</span>
-            <span class="lineage-node accent">Circuit / Tribal House</span>
+        <!-- ACT 4: THE HUMAN CONCLUSION -->
+        <div class="act-block act-block-conclusion">
+          <div class="act-label-inline">
+            <span class="act-label act-label-violet">Act IV — The Conclusion</span>
           </div>
+          <h3 class="act-heading">A Groove Grammar, Not a Single Cell</h3>
+          <p class="act-body">What the data supports is not "circuit equals tresillo." The tresillo is a real and meaningful antecedent — its lineage through Afro-Cuban and New Orleans music into tribal house and circuit is documented and audible. But the pattern as heard by listeners is better described at a higher level of abstraction.</p>
+          <blockquote class="act-pullquote">
+            Circuit music tends to preserve a rigid quarter-note floor while shifting much of its expressive rhythmic identity into recurring off-beat subdivisions, producing a groove that feels driving, suspended, and physically insistent rather than merely straight or square.
+          </blockquote>
+          <p class="act-body">That is closer to what the data supports, and closer to what the body feels. Genre is not only where notes fall. It is also what the placement does over the course of an hour in a dark room.</p>
         </div>
+
       </div>
     </section>
 

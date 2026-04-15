@@ -563,3 +563,48 @@ if (themeToggle) {
     }, 50);
   });
 }
+
+// ---- SUBDIVISION ENERGY BARS ----
+(function () {
+  const container = document.getElementById('subdivisionBars');
+  if (!container) return;
+
+  const SUBDIV_DATA = [
+    { genre: 'Circuit',      color: '#c084fc', quarter: 0.38, eighth: 0.27, sixteenth: 0.35 },
+    { genre: 'Tribal House', color: '#f97316', quarter: 0.30, eighth: 0.27, sixteenth: 0.43 },
+    { genre: 'House',        color: '#4ade80', quarter: 0.52, eighth: 0.34, sixteenth: 0.14 },
+    { genre: 'Disco',        color: '#facc15', quarter: 0.44, eighth: 0.34, sixteenth: 0.22 },
+    { genre: 'Jazz',         color: '#38bdf8', quarter: 0.40, eighth: 0.32, sixteenth: 0.28 },
+  ];
+
+  const LEVEL_COLORS = {
+    quarter:   'var(--color-primary)',
+    eighth:    '#f59e0b',
+    sixteenth: '#2dd4bf',
+  };
+
+  SUBDIV_DATA.forEach(row => {
+    const rowEl = document.createElement('div');
+    rowEl.className = 'subdiv-row';
+
+    const label = document.createElement('span');
+    label.className = 'subdiv-row-label';
+    label.textContent = row.genre;
+    rowEl.appendChild(label);
+
+    const barTrack = document.createElement('div');
+    barTrack.className = 'subdiv-bar-track';
+
+    ['quarter', 'eighth', 'sixteenth'].forEach(level => {
+      const seg = document.createElement('div');
+      seg.className = 'subdiv-bar-seg';
+      seg.style.width = (row[level] * 100) + '%';
+      seg.style.background = LEVEL_COLORS[level];
+      seg.title = level + ': ' + (row[level] * 100).toFixed(0) + '%';
+      barTrack.appendChild(seg);
+    });
+
+    rowEl.appendChild(barTrack);
+    container.appendChild(rowEl);
+  });
+})();
