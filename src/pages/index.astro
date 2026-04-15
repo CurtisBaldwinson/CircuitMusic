@@ -358,7 +358,7 @@ const clientData = {
             <span class="act-label act-label-amber">Act II &mdash; The Complication</span>
           </div>
           <h3 class="act-heading">The Data Pushed Back</h3>
-          <p class="act-body">Measuring the tresillo index across five genres produced a surprise: the numbers were closer than expected. Circuit scored {gf(sortedGenres.find(r => r.genre === 'Circuit')!, 'tresillo_index_mean').toFixed(2)}, tribal house {gf(sortedGenres.find(r => r.genre === 'Tribal House')!, 'tresillo_index_mean').toFixed(2)}, house {gf(sortedGenres.find(r => r.genre === 'House')!, 'tresillo_index_mean').toFixed(2)}. No clean separation. The reason turns out to be structural: in a full stereo mix, the kick drum is dramatically louder than everything above it. When the algorithm sums all onset energy, the four-on-the-floor kick dominates and every genre looks roughly duple. The tresillo, if it is there, is being buried under the one thing all dance music shares.</p>
+          <p class="act-body">Even Coldplay uses <a href="https://www.youtube.com/watch?v=sMPt9BQTFXw" target="_blank" rel="noopener">tresillo</a>, so that can't be the only characteristic that defines the sound. Measuring the tresillo index across five genres produced a surprise: the numbers were closer than expected. Circuit scored {gf(sortedGenres.find(r => r.genre === 'Circuit')!, 'tresillo_index_mean').toFixed(2)}, tribal house {gf(sortedGenres.find(r => r.genre === 'Tribal House')!, 'tresillo_index_mean').toFixed(2)}, house {gf(sortedGenres.find(r => r.genre === 'House')!, 'tresillo_index_mean').toFixed(2)}. No clean separation. The reason turns out to be structural: in a full stereo mix, the kick drum is dramatically louder than everything above it. When the algorithm sums all onset energy, the four-on-the-floor kick dominates and every genre looks roughly duple. The tresillo, if it is there, is being buried under the one thing all dance music shares.</p>
           <div class="complication-callout">
             <div class="complication-stat">
               <span class="complication-val">{gf(sortedGenres.find(r => r.genre === 'Circuit')!, 'tresillo_index_mean').toFixed(2)}</span>
@@ -729,7 +729,7 @@ const clientData = {
       <div class="sanctuary-inner">
         <span class="section-tag">06 / Beyond the Music</span>
         <blockquote class="sanctuary-quote">
-          <p>Circuit music is only one dimension of the circuit party. Beneath the sound, the spectacle, and the physical release lies something deeper: sanctuary. In a world where queer people have too often faced shame, persecution, and even death simply for existing, the circuit party can become an act of collective euphoria and remembrance, a temporary refuge where bodies are not hidden, love is not explained, and belonging does not need permission. For a moment, people step into a world shaped by one another, before returning to one that has not always offered the same grace.</p>
+          <p>Circuit music is only one dimension of the circuit party. Beneath the sound, the spectacle, and the physical release lies something deeper: sanctuary. In a world that has too often met queer life with shame, punishment, or erasure, the circuit party can become more than celebration. It can become a temporary refuge, a space of collective euphoria, recognition, and release, where bodies are not hidden, love is not explained, and belonging does not need permission. For a moment, people step into a world shaped by one another. Then they return to one that has not always offered the same grace, carrying with them the memory of what it felt like to be fully present, unguarded, and, if only for a night, at home.</p>
           <footer class="sanctuary-attribution">&mdash; Curtis Baldwinson</footer>
         </blockquote>
       </div>
@@ -753,7 +753,7 @@ const clientData = {
   </footer>
 
   <!-- Circuit audio clip -->
-  <audio id="circuitAudio" preload="auto" loop>
+  <audio id="circuitAudio" preload="auto">
     <source src="/circuit_clip.mp3" type="audio/mpeg" />
   </audio>
 
