@@ -1,0 +1,83 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  {
+    slug: 'on-slaters-claims',
+    title: 'On Slater\'s Claims',
+    subtitle: 'A response to the assertion that circuit music is "not a genre"',
+    date: '2026-04-15',
+    author: 'Curtis Baldwinson',
+  },
+];
+---
+
+<Layout
+  title="Blog &mdash; Circuit Music"
+  description="Essays and responses on circuit music as a genre: its definition, its critics, and its cultural significance."
+>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo" aria-label="Circuit Music home">
+      <img src="/circuitmusic-logo.png" alt="" class="nav-logo-img" width="32" height="32" />
+      <span>Circuit Music</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/#definition">Definition</a></li>
+      <li><a href="/#rhythm">Rhythm</a></li>
+      <li><a href="/#data">Data</a></li>
+      <li><a href="/#djs">DJs</a></li>
+      <li><a href="/blog" aria-current="page">Blog</a></li>
+    </ul>
+    <button class="nav-theme" data-theme-toggle aria-label="Switch to light mode">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </nav>
+
+  <main class="blog-index">
+    <div class="container">
+      <div class="blog-index-header">
+        <h1>Blog</h1>
+        <p class="blog-index-sub">Essays on circuit music, its critics, and its cultural meaning.</p>
+      </div>
+
+      <div class="blog-post-list">
+        {posts.map(post => (
+          <a href={`/blog/${post.slug}`} class="blog-post-card">
+            <time class="blog-post-date" datetime={post.date}>
+              {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </time>
+            <h2 class="blog-post-card-title">{post.title}</h2>
+            <p class="blog-post-card-sub">{post.subtitle}</p>
+            <span class="blog-post-card-read">Read &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-byline">Researched and written with love, by Curtis Baldwinson</p>
+        <div class="footer-divider"></div>
+        <div class="footer-legal">
+          <span class="footer-legal-copy">&copy; 2026 <a href="https://baldwinson.com" target="_blank" rel="noopener">Baldwinson Corporation</a>. All rights reserved.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script is:inline>
+    // Theme toggle (minimal duplicate for blog pages)
+    (function () {
+      const t = document.querySelector('[data-theme-toggle]');
+      const r = document.documentElement;
+      let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+      r.setAttribute('data-theme', d);
+      if (t) t.addEventListener('click', () => {
+        d = d === 'dark' ? 'light' : 'dark';
+        r.setAttribute('data-theme', d);
+      });
+    })();
+  </script>
+</Layout>
