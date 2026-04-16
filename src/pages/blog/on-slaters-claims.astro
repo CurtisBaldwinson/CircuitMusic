@@ -49,9 +49,11 @@ const author = 'Curtis Baldwinson';
 
         <blockquote class="blog-pullquote">The real issue is whether circuit music exhibits consistent rhythmic, structural, and affective traits sufficient to justify recognition as a genre. It does.</blockquote>
 
-        <p>Even the article&rsquo;s own examples fail to support the looser claim. Morabito is a talented DJ, and I have no interest in denying her skill. But <a href="https://morabito.nyc/info.cfm" target="_blank" rel="noopener">her own website</a> describes her sound as a &ldquo;musical evolution towards a more progressive, tech house influenced sound.&rdquo; That wording matters. It is not the language of strict generic continuity, but of stylistic evolution away from a center toward an adjacent lane. So if Slater means to align himself with that position, or if the article means to use Morabito as evidence that circuit is merely a floating context rather than a musically identifiable form, the example undermines the claim. One does not erase a genre by pointing to artists whose own self-description marks their departure from its core conventions.</p>
+        <p class="has-sidenote">Even the article&rsquo;s own examples fail to support the looser claim. Morabito is a talented DJ, and I have no interest in denying her skill.<span class="sidenote-ref"><span class="sidenote-marker" aria-hidden="true"></span><span class="sidenote" role="note">I count myself among Morabito&rsquo;s more generous admirers, whereas some of my friends, being far stricter circuit acolytes, attend her parties only grudgingly, if they attend at all.</span></span> But <a href="https://morabito.nyc/info.cfm" target="_blank" rel="noopener">her own website</a><button class="evidence-thumb" data-evidence-src="/blog/2026-04-15_morabito-screenshot.png" data-evidence-alt="Screenshot of Morabito&rsquo;s website describing her sound as progressive, tech house influenced" aria-label="View screenshot evidence"><img src="/blog/2026-04-15_morabito-screenshot.png" alt="" loading="lazy" aria-hidden="true"></button> describes her sound as a &ldquo;musical evolution towards a more progressive, tech house influenced sound.&rdquo; That wording matters. It is not the language of strict generic continuity, but of stylistic evolution away from a center toward an adjacent lane. So if Slater means to align himself with that position, or if the article means to use Morabito as evidence that circuit is merely a floating context rather than a musically identifiable form, the example undermines the claim. One does not erase a genre by pointing to artists whose own self-description marks their departure from its core conventions.</p>
 
-        <p>Slater further claims that &ldquo;The music changes year by year and reflects shifts in culture and taste.&rdquo; But genres evolve. That is what living genres do. House changed. Techno changed. Disco changed. None ceased to be genres on that account. To suggest otherwise is to confuse development with dissolution.</p>
+        <p>The whiplash<button class="evidence-thumb" data-evidence-src="/blog/2026-04-15_morabito-quote.png" data-evidence-alt="Screenshot of Morabito&rsquo;s quote describing her musical evolution" aria-label="View screenshot evidence"><img src="/blog/2026-04-15_morabito-quote.png" alt="" loading="lazy" aria-hidden="true"></button> is not rhetorical flourish; it is the argument failing in real time. One cannot simultaneously insist that circuit music is not a genre and then speak intelligibly about moving away from its sound. The second claim quietly restores the coherence the first attempts to deny. Whether this vagueness is strategic, habitual, or merely careless, its effect is the same: it withholds from a gay-built musical form the ordinary dignity of definition.</p>
+
+        <p class="has-sidenote">Slater further claims that &ldquo;The music changes year by year and reflects shifts in culture and taste.&rdquo;<button class="evidence-thumb" data-evidence-src="/blog/2026_04-15_slater-segment.png" data-evidence-alt="Screenshot of Slater&rsquo;s quote about circuit music changing year by year" aria-label="View screenshot evidence"><img src="/blog/2026_04-15_slater-segment.png" alt="" loading="lazy" aria-hidden="true"></button><span class="sidenote-ref"><span class="sidenote-marker" aria-hidden="true"></span><span class="sidenote" role="note">Perhaps some imagine that what remains undefined remains safer. History suggests otherwise. The forces that resent queer joy do not wait for precise terminology before moving against it. They come regardless. The only real choice is whether to meet that pressure diminished and apologetic, or lucid, upright, and unafraid to name what we have built.</span></span> But genres evolve. That is what living genres do. House changed. Techno changed. Disco changed. None ceased to be genres on that account. To suggest otherwise is to confuse development with dissolution.</p>
 
         <p>Worse still, it confuses sociology with acoustics. A DJ who insists that circuit music is &ldquo;just a context&rdquo; is making a sociological observation while refusing the musical question. Context matters. It always has. But context does not erase form. A church does not make gospel musically meaningless; a warehouse does not dissolve techno into architecture; and a circuit party does not magically prevent circuit music from having rhythmic signatures, structural habits, or a distinct emotional grammar. To argue otherwise is not nuance. It is a category mistake.</p>
 
@@ -86,6 +88,14 @@ const author = 'Curtis Baldwinson';
     </div>
   </footer>
 
+  <div class="evidence-modal" id="evidenceModal" role="dialog" aria-modal="true" aria-label="Evidence screenshot" hidden>
+    <div class="evidence-modal-backdrop"></div>
+    <div class="evidence-modal-content">
+      <button class="evidence-modal-close" aria-label="Close">&times;</button>
+      <img class="evidence-modal-img" src="" alt="">
+    </div>
+  </div>
+
   <script is:inline>
     (function () {
       const t = document.querySelector('[data-theme-toggle]');
@@ -96,6 +106,36 @@ const author = 'Curtis Baldwinson';
         d = d === 'dark' ? 'light' : 'dark';
         r.setAttribute('data-theme', d);
       });
+
+      const modal = document.getElementById('evidenceModal');
+      const modalImg = modal.querySelector('.evidence-modal-img');
+      const modalClose = modal.querySelector('.evidence-modal-close');
+      const backdrop = modal.querySelector('.evidence-modal-backdrop');
+
+      function openModal(src, alt) {
+        modalImg.src = src;
+        modalImg.alt = alt;
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        modal.hidden = true;
+        modalImg.src = '';
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.evidence-thumb').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          openModal(btn.dataset.evidenceSrc, btn.dataset.evidenceAlt || '');
+        });
+      });
+      modalClose.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !modal.hidden) closeModal();
+      });
+
+
     })();
   </script>
 </Layout>

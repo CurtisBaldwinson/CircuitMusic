@@ -1351,6 +1351,140 @@ a:hover { color: var(--color-primary-hover); }
   font-style: italic;
 }
 
+/* Sidenotes */
+.sidenote-ref {
+  position: relative;
+}
+.sidenote-marker::after {
+  content: '*';
+  font-size: 0.75em;
+  font-weight: 700;
+  color: var(--color-primary);
+  vertical-align: super;
+  margin-left: 1px;
+}
+.sidenote {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  font-style: italic;
+  display: block;
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--color-primary);
+}
+.sidenote::before {
+  content: '* ';
+  font-weight: 700;
+  color: var(--color-primary);
+  font-style: normal;
+}
+@media (min-width: 1100px) {
+  .blog-article {
+    overflow: visible;
+  }
+  .has-sidenote {
+    position: relative;
+    overflow: visible;
+  }
+  .sidenote-ref {
+    position: static;
+  }
+  .sidenote {
+    position: absolute;
+    left: calc(100% + var(--space-6));
+    top: 0;
+    width: 200px;
+    margin: 0;
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--color-primary);
+    display: block;
+  }
+}
+
+/* Evidence thumbnails */
+.evidence-thumb {
+  display: inline-block;
+  vertical-align: middle;
+  width: 28px;
+  height: 20px;
+  margin-left: 4px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--color-surface-2);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.evidence-thumb:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--color-primary) 25%, transparent);
+}
+.evidence-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Evidence modal */
+.evidence-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.evidence-modal[hidden] {
+  display: none;
+}
+.evidence-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+}
+.evidence-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+}
+.evidence-modal-img {
+  display: block;
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: var(--radius-xl);
+}
+.evidence-modal-close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+.evidence-modal-close:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
 /* Drop cap */
 .blog-body .drop-cap::first-letter {
   font-family: var(--font-display);
