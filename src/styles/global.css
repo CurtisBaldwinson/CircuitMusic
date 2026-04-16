@@ -1517,6 +1517,40 @@ a:hover { color: var(--color-primary-hover); }
   margin-top: 0.05em;
 }
 
+/* Blog citations */
+.blog-citations {
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+.blog-citations-title {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.01em;
+}
+.blog-citations-list {
+  list-style: decimal;
+  padding-left: var(--space-6);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+.blog-citations-list li {
+  margin-bottom: var(--space-2);
+}
+.blog-citations-list a {
+  color: var(--color-primary);
+}
+.blog-last-updated {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  margin-top: var(--space-6);
+  letter-spacing: 0.02em;
+}
+
 /* Blog divider */
 .blog-divider {
   border: none;
