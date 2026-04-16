@@ -1562,6 +1562,44 @@ a:hover { color: var(--color-primary-hover); }
   }
 }
 
+/* Mobile blog banner */
+.mobile-blog-banner {
+  display: block;
+  padding: var(--space-3) clamp(var(--space-6), 5vw, var(--space-16));
+  background: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-border);
+}
+.mobile-blog-banner-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+.mobile-blog-banner-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+.mobile-blog-banner-text {
+  color: var(--color-primary);
+}
+@media (min-width: 900px) {
+  .mobile-blog-banner {
+    display: none;
+  }
+}
+
 /* Blog CTA banner (main site) */
 .blog-cta-banner {
   padding: var(--space-10) 0;
