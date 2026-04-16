@@ -66,6 +66,12 @@ const author = 'Curtis Baldwinson';
         <p>To acknowledge the social world around circuit music is not to imprison anyone within it. Artists are not reducible to one context, nor are people reducible to one identity. Life is too large and vital for that. We are too quick to force one another into boxes, as though a human being could be exhausted by a single label. No box can contain a life, no more than any universe could contain my capacity to love another man.</p>
 
         <p>New genres are acknowledged all the time with far less ceremony than this. What is most revealing is not that circuit music can be analyzed, but that a genre so widely recognized in practice had to fight this hard to be recognized in theory. When the form in question emerges from gay culture, recognition suddenly becomes elusive, as though a sound shaped by queer bodies, rituals, and memory must remain perpetually unofficial in order to be legible to outsiders.</p>
+
+        <hr class="blog-divider">
+
+        <p>Perhaps Slater and Morabito meant only &ldquo;the circuit&rdquo; in the geographic and social sense: the sequence of parties moving across cities, seasons, and continents. If so, then part of the disagreement may be one of language rather than conviction. That is a charitable possibility, and charity demands that it be considered. If they want a gay cultural circuit that includes many musical genres, that is a beautiful idea. My concern is not with breadth, but with precision. An event circuit and a musical genre are not the same thing, and it matters that we speak as though we know the difference.</p>
+
+        <p>I say this without any need to diminish either of them. One of my favorite memories is dancing at Atlantis&rsquo;s Dog Tag party while Dan Slater played.<button class="evidence-thumb evidence-thumb--video" data-evidence-video="/blog/2026_04-16_atlantis-scene.mp4" aria-label="Play video from Atlantis cruise"><img src="/blog/2026_04-16_atlantis-scene-poster.jpg" alt="" loading="lazy" aria-hidden="true"><span class="evidence-thumb-play" aria-hidden="true">&#9654;</span></button> I also remember with deep fondness dancing the night away to Morabito on Fire Island. These are talented and successful people whose work has clearly meant something to many. I would sooner celebrate the range of their musical interests than try to box them into a rigid formula. But that is exactly the point: recognizing circuit music as a genre does not imprison anyone inside it. It simply gives proper language to something that has already become musically and culturally real.</p>
       </div>
 
       <div class="blog-author-card">
@@ -93,6 +99,7 @@ const author = 'Curtis Baldwinson';
     <div class="evidence-modal-content">
       <button class="evidence-modal-close" aria-label="Close">&times;</button>
       <img class="evidence-modal-img" src="" alt="">
+      <video class="evidence-modal-video" controls playsinline preload="none" hidden></video>
     </div>
   </div>
 
@@ -109,24 +116,44 @@ const author = 'Curtis Baldwinson';
 
       const modal = document.getElementById('evidenceModal');
       const modalImg = modal.querySelector('.evidence-modal-img');
+      const modalVideo = modal.querySelector('.evidence-modal-video');
       const modalClose = modal.querySelector('.evidence-modal-close');
       const backdrop = modal.querySelector('.evidence-modal-backdrop');
 
       function openModal(src, alt) {
+        modalVideo.hidden = true;
+        modalVideo.pause();
+        modalVideo.src = '';
+        modalImg.hidden = false;
         modalImg.src = src;
         modalImg.alt = alt;
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+      }
+      function openVideoModal(src) {
+        modalImg.hidden = true;
+        modalImg.src = '';
+        modalVideo.hidden = false;
+        modalVideo.src = src;
+        modalVideo.play();
         modal.hidden = false;
         document.body.style.overflow = 'hidden';
       }
       function closeModal() {
         modal.hidden = true;
         modalImg.src = '';
+        modalVideo.pause();
+        modalVideo.src = '';
         document.body.style.overflow = '';
       }
 
       document.querySelectorAll('.evidence-thumb').forEach(function (btn) {
         btn.addEventListener('click', function () {
-          openModal(btn.dataset.evidenceSrc, btn.dataset.evidenceAlt || '');
+          if (btn.dataset.evidenceVideo) {
+            openVideoModal(btn.dataset.evidenceVideo);
+          } else {
+            openModal(btn.dataset.evidenceSrc, btn.dataset.evidenceAlt || '');
+          }
         });
       });
       modalClose.addEventListener('click', closeModal);
