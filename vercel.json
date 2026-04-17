@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/blog/on-slaters-claims",
+      "destination": "/blog/circuit-is-a-genre",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/_assets/(.*)",
