@@ -800,6 +800,28 @@ a:hover { color: var(--color-primary-hover); }
   transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition);
 }
 .dj-card:hover { box-shadow: var(--shadow-lg); border-color: var(--color-primary); transform: translateY(-2px); }
+.dj-card--favorite {
+  border-color: var(--color-primary);
+  position: relative;
+}
+.dj-favorite-badge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-primary);
+  background: color-mix(in oklab, var(--color-primary) 10%, var(--color-surface));
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid color-mix(in oklab, var(--color-primary) 30%, transparent);
+  letter-spacing: 0.02em;
+}
 .dj-flag {
   height: 6px;
   width: 100%;
