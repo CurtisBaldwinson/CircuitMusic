@@ -1711,6 +1711,7 @@ a:hover { color: var(--color-primary-hover); }
 }
 .blog-cta-link:hover {
   background: var(--color-primary-hover);
+  color: #fff;
 }
 
 /* Featured blog post card */
