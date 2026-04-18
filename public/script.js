@@ -218,6 +218,48 @@ function buildMainChart(metricKey) {
   };
 
   const plugins = [];
+
+  // Standard deviation error bar whiskers
+  if (m.std) {
+    plugins.push({
+      id: 'errorBars',
+      afterDatasetsDraw(chart) {
+        const { ctx, scales } = chart;
+        const meta = chart.getDatasetMeta(0);
+        ctx.save();
+        ctx.lineWidth = 2;
+        ctx.lineCap = 'round';
+        meta.data.forEach((bar, i) => {
+          const mean = m.values[i];
+          const sd = m.std[i];
+          if (sd == null || sd === 0 || isNaN(sd)) return;
+          const x = bar.x;
+          const yTop = scales.y.getPixelForValue(mean + sd);
+          const yBot = scales.y.getPixelForValue(mean - sd);
+          const capW = Math.min(bar.width * 0.4, 14);
+          ctx.strokeStyle = COLORS[i];
+          ctx.globalAlpha = 0.85;
+          // Vertical stem
+          ctx.beginPath();
+          ctx.moveTo(x, yTop);
+          ctx.lineTo(x, yBot);
+          ctx.stroke();
+          // Top cap
+          ctx.beginPath();
+          ctx.moveTo(x - capW, yTop);
+          ctx.lineTo(x + capW, yTop);
+          ctx.stroke();
+          // Bottom cap
+          ctx.beginPath();
+          ctx.moveTo(x - capW, yBot);
+          ctx.lineTo(x + capW, yBot);
+          ctx.stroke();
+        });
+        ctx.restore();
+      }
+    });
+  }
+
   if (m.refLine) {
     plugins.push({
       id: 'refLine',
@@ -259,7 +301,13 @@ function buildMainChart(metricKey) {
           borderWidth: 1,
           padding: 12,
           callbacks: {
-            label: ctx => `${ctx.parsed.y}${m.unit}`
+            label: ctx => {
+              const val = `${ctx.parsed.y}${m.unit}`;
+              if (m.std && m.std[ctx.dataIndex] != null && !isNaN(m.std[ctx.dataIndex])) {
+                return `${val}  (±${m.std[ctx.dataIndex].toFixed(1)} std)`;
+              }
+              return val;
+            }
           }
         },
       },
